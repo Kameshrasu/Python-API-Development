@@ -23,7 +23,7 @@ Think of an API like ordering food at a restaurant:
 
 ---
 
-## 2️⃣ Difference between REST, SOAP, and GraphQL
+## 2️⃣ Difference between REST, SOAP, GraphQL, and WebSocket
 
 ### REST API
 - **Most common** type of API
@@ -68,14 +68,50 @@ query {
 }
 ```
 
+### WebSocket API
+- **Real-time, two-way** communication
+- **Persistent connection** between client and server
+- Both client and server can send messages anytime
+- Perfect for **live updates**, **chat apps**, **online games**
+
+```javascript
+// Client connects to WebSocket
+const socket = new WebSocket('ws://localhost:8080');
+
+// Send message to server
+socket.send('Hello Server!');
+
+// Receive messages from server
+socket.onmessage = function(event) {
+    console.log('Server says:', event.data);
+};
+```
+
+**How WebSocket is Different:**
+
+| Traditional API (REST) | WebSocket API |
+|------------------------|---------------|
+| Request → Response | Continuous connection |
+| Client asks, server answers | Both can send messages |
+| One request = One response | Multiple messages both ways |
+| Good for data fetching | Good for real-time updates |
+
+**WebSocket Use Cases:**
+- **Chat applications** (WhatsApp, Slack)
+- **Live sports scores** 
+- **Stock price updates**
+- **Online gaming**
+- **Collaborative editing** (Google Docs)
+
 **Quick Comparison:**
 
-| Feature | REST | SOAP | GraphQL |
-|---------|------|------|---------|
-| Data Format | JSON | XML | JSON |
-| Learning Curve | Easy | Hard | Medium |
-| Flexibility | Medium | Low | High |
-| Use Case | Web APIs | Enterprise | Modern Apps |
+| Feature | REST | SOAP | GraphQL | WebSocket |
+|---------|------|------|---------|-----------|
+| Data Format | JSON | XML | JSON | Any (JSON/Text) |
+| Learning Curve | Easy | Hard | Medium | Medium |
+| Connection | Request-Response | Request-Response | Request-Response | Persistent |
+| Real-time | No | No | No | Yes |
+| Use Case | Web APIs | Enterprise | Modern Apps | Live Updates |
 
 ---
 
@@ -378,4 +414,3 @@ Try these free APIs to practice:
 5. **JSON** is like Python dictionaries but in text format
 6. **API clients** like Postman and curl help you test APIs
 
-**Next:** Start practicing with real APIs using Postman or curl!
