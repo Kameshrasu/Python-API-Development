@@ -157,7 +157,4 @@ This roadmap will guide you step-by-step to learn API development using Python �
 
 ---
 
-✅ **Next Step:** Start with **Stage 1 – Fundamentals of APIs**
-e MIT License – free to use and modify.
 
----
